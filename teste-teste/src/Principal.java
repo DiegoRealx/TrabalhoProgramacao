@@ -25,6 +25,7 @@ public class Principal {
 
             switch (escolha) {
                 case "1":
+                    try{
                     System.out.print("ID do produto: ");
                     int idProduto = Integer.parseInt(scanner.nextLine());
                     System.out.print("Nome do produto: ");
@@ -39,8 +40,13 @@ public class Principal {
                     gerenciadorProduto.adicionarProduto(produto);
                     System.out.println("Produto cadastrado com sucesso.");
                     break;
+                    }
+                    catch (NumberFormatException e) {
+                        System.out.println("Digite Apenas números");
+                    }continue;
 
                 case "2":
+                    try{
                     System.out.print("ID do produto a ser atualizado: ");
                     int idAtualizar = Integer.parseInt(scanner.nextLine());
                     System.out.print("Novo nome do produto: ");
@@ -55,13 +61,22 @@ public class Principal {
                     gerenciadorProduto.atualizarProduto(idAtualizar, produtoAtualizado);
                     System.out.println("Produto atualizado com sucesso.");
                     break;
+                    }
+                    catch (NumberFormatException e) {
+                        System.out.println("Digite Apenas números");
+                    }continue;
 
                 case "3":
+                    try{
                     System.out.print("ID do produto a ser removido: ");
                     int idRemover = Integer.parseInt(scanner.nextLine());
                     gerenciadorProduto.removerProduto(idRemover);
                     System.out.println("Produto removido com sucesso.");
                     break;
+                    }
+                    catch (NumberFormatException e) {
+                        System.out.println("Digite apenas números");
+                    }
 
                 case "4":
                     System.out.print("ID do produto: ");

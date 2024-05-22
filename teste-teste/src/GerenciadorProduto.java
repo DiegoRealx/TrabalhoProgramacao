@@ -28,7 +28,6 @@ public class GerenciadorProduto {
         System.out.println("Produto com ID " + idProduto + " não encontrado.");
     }
 
-    // Método para remover um produto
     public void removerProduto(int idProduto) {
         List<Produto> produtos = bancoDeDados.carregarProdutos();
         produtos.removeIf(produto -> produto.getId() == idProduto);

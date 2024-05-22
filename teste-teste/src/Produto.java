@@ -53,7 +53,6 @@ public class Produto {
         this.validade = validade;
     }
 
-    @Override
     public String toString() {
         return id + "," + nome + "," + preco + "," + quantidade + "," + validade;
     }
